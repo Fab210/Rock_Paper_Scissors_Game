@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Rock Paper Scissors</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Rock, Paper, Scissors</h1>
+    <p>Select either rock, paper, or scissors and see if you can beat the computer!</p>
+
+    <p><strong>Remember:</strong> “Rock breaks scissors, scissors cuts paper, paper covers rock.” </p>
+    <div class='score'>
+
+    </div>
+    <div class='message' id='message'>
+
+    </div>
+    <button onclick="selectType(1)" type='button' id="rock">Rock</button>
+    <button onclick="selectType(2)" type='button'>Paper</button>
+    <button onclick="selectType(3)" type='button'>Scissors</button>
+    <script>
+        var div = document.getElementById('message');
+
+        function selectType(playerNumber) {
+           var randomNumber = Math.floor(Math.random() * 3) + 1;
+           console.log('random number',randomNumber)
+            console.log("playerNumber", playerNumber);
+            if(playerNumber === randomNumber){
+                alert('draw')
+                div.innerHTML = 'draw';
+            }
+            if(playerNumber == 1 && randomNumber == 2){
+                alert('Player LOOSE Rock loose Paper')
+                div.innerHTML = 'Player LOOSE Rock loose Paper';
+            }
+            if(playerNumber == 1 && randomNumber == 3){
+                alert('Player WINS Rock beat Scissors')
+                div.innerHTML = 'Player WINS Rock beat Scissors';
+            }
+
+            if(playerNumber == 2 && randomNumber == 1){
+                alert('Player WINS Paper beat Rock')
+                div.innerHTML = 'Player WINS Paper beat Rock';
+            }
+            if(playerNumber == 2 && randomNumber == 3){
+                alert('Player LOOSE Paper loose Scissors')
+                div.innerHTML = 'Player LOOSE Paper loose Scissors';
+            }
+
+            if(playerNumber == 3 && randomNumber == 1){
+                alert('Player LOOSE Scissors loose Rock')
+                div.innerHTML = 'Player LOOSE Scissors loose Rock';
+            }
+            if(playerNumber == 3 && randomNumber == 2){
+                alert('Player WINS Scissors beat Paper')
+                div.innerHTML = 'Player WINS Scissors beat Paper';
+            }
+        }
+
+       
+    </script>
+</body>
+
+</html>
